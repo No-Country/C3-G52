@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import { 
   Header, 
@@ -16,18 +16,26 @@ import './App.scss';
 
 
 function App() {
+
+  const { pathname } = useLocation();
+
   return (
     <div className="App">
 
-      <Header />
+      {
+        pathname === '/login' || <Header />
+      }
 
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/products' element={<Login />} />
         <Route path='/services' element={<Services />} />
       </Routes>
 
-      <Footer />
+
+      {
+        pathname === '/login' || <Footer />
+      }
 
     </div>
   )
