@@ -1,4 +1,47 @@
 .loginContainer{
 	background-image: url('../../assets/banner_turismo.jpg');
 	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.title{
+		margin-bottom: 1rem;
+	}
+
+	.form{
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		width: 350px;
+
+		& > *{
+			border: none;
+			border: solid 1px rgb(155, 155, 155);
+			border-radius: 5px;
+			padding: 0.7rem 1rem;
+			font-size: 1rem;
+		}
+
+		.btnSubmit,
+		.btnGoogle{
+			color: white;
+			font-weight: 700;
+
+			&:hover{
+				cursor: pointer;
+				opacity: 0.8;
+			}
+		}
+
+		.btnSubmit{
+			background-color: rgb(78, 161, 255);	
+		}
+
+		.btnGoogle{
+			background-color: rgb(253, 168, 31);
+		}
+	}
 }
