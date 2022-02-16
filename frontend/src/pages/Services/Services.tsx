@@ -1,17 +1,44 @@
 import React from 'react';
-import CardServ from '../../components/cardServ';
 
-let objMoock={
-	name: "SALIDA TURISTICA",
-	img:"url",
-	price: 15 ,
-	description:"alguna" }
+import { Service } from '../../interfaces';
+import { CardService } from '../../components';
 
 
-	const Services = () => {
+let servicesMoock : Service[] = [
+	{
+		name: "A-SALIDA TURISTICA",
+		img:"url",
+		price: 15 ,
+		description: "alguna" 
+	},
+	{
+		name: "B-SALIDA TURISTICA",
+		img:"url",
+		price: 15 ,
+		description: "alguna" 
+	},
+	{
+		name: "C-SALIDA TURISTICA",
+		img:"url",
+		price: 15 ,
+		description: "alguna" 
+	}
+]
+
+
+const Services = () => {
 	return (
-		<div className='container'> Servicios:
-		<CardServ name={objMoock.name}  />
+		<div className='container'> 
+		<h2>Servicios:</h2>
+		{
+			servicesMoock.map((el, index) => (
+				<CardService
+					name={el.name}
+					description={el.description}
+					price={el.price}
+					img={el.img} />
+			))
+		}
 		</div>
 	)
 }
