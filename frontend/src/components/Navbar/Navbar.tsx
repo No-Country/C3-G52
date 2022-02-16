@@ -37,20 +37,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-/*
-import { Link } from 'react-router-dom';
-
-function Navbar() {
-  return (
-    <nav>
-      <Link to="/">Inicio</Link>
-      <Link to="/productos">Productos</Link>
-      <Link to="/servicios">Servicios</Link>
-    </nav>
-  );
-}
-
-export default Navbar;
-
-*/
