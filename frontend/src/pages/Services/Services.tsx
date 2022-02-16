@@ -1,8 +1,18 @@
 import React from 'react';
+import CardServ from '../../components/cardServ';
 
-const Services = () => {
+let objMoock={
+	name: "SALIDA TURISTICA",
+	img:"url",
+	price: 15 ,
+	description:"alguna" }
+
+
+	const Services = () => {
 	return (
-		<div>Services</div>
+		<div className='container'> Servicios:
+		<CardServ name={objMoock.name}  />
+		</div>
 	)
 }
 
