@@ -1,9 +1,17 @@
 import React from 'react';
 
-const Header = () => {
-	return (
-		<div>Header</div>
-	)
+import styles from './Header.module.scss'
+
+function Header() {
+  return (
+    <div className={styles.image}>
+      <section>
+        <h1>
+          Hola
+        </h1>
+      </section>
+    </div>
+  );
 }
 
 export default Header;
