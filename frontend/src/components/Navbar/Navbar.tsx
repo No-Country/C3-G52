@@ -5,7 +5,8 @@ import styles from "./Navbar.module.scss";
 export default function Navbar() {
   return (
     <nav className={styles.container}>
-      <ul className={styles.navbar}>
+      <p>Fiambalá</p>
+      <ul>
         <li>
           <NavLink
             to="/"
@@ -30,27 +31,12 @@ export default function Navbar() {
             Servicios
           </NavLink>
         </li>
-        <NavLink to="/login" className={styles.login}>
-          Iniciar
-        </NavLink>
+        <li>
+          <NavLink to="/login">
+            Iniciar
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
 }
-
-/*
-import { Link } from 'react-router-dom';
-
-function Navbar() {
-  return (
-    <nav>
-      <Link to="/">Inicio</Link>
-      <Link to="/productos">Productos</Link>
-      <Link to="/servicios">Servicios</Link>
-    </nav>
-  );
-}
-
-export default Navbar;
-
-*/
