@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const companies = require('../models/Company');
+const company = require('../models/Company');
 
 module.exports = class Company {
   async createCompany(_company) {
     try {
-      const companyToCreate = new companies(_company);
+      const companyToCreate = new company(_company);
       return await companyToCreate.save();
     } catch (error) {
       console.log(error);
@@ -14,7 +14,7 @@ module.exports = class Company {
 
   async readAll() {
     try {
-      return await companies.find({});
+      return await company.find({});
     } catch (error) {
       console.log(error);
       return error;
@@ -23,7 +23,7 @@ module.exports = class Company {
 
   async read(_id) {
     try {
-      return await companies.find({ _id: id });
+      return await company.find({ _id: id });
     } catch (error) {
       console.log(error);
       return error;
@@ -41,11 +41,9 @@ module.exports = class Company {
         active,
         password,
       };
-      const result = Promise.resolve(
-        companies.findOneAndUpdate(filter, update)
-      );
+      const result = Promise.resolve(company.findOneAndUpdate(filter, update));
       await result;
-      return companies.findOne(filter);
+      return company.findOne(filter);
     } catch (error) {
       console.log(error);
       return error;
@@ -54,7 +52,7 @@ module.exports = class Company {
 
   delete(_id) {
     try {
-      return companies.findIdAndDelete({ _id: _id });
+      return company.findIdAndDelete({ _id: _id });
     } catch (error) {
       console.log(error);
       return error;
@@ -63,7 +61,7 @@ module.exports = class Company {
 
   getByEmail(email) {
     try {
-      return companies.findOne({ email });
+      return company.findOne({ email });
     } catch (error) {
       console.log(error);
       return error;

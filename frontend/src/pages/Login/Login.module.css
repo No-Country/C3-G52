@@ -1,0 +1,64 @@
+.loginContainer {
+  background-image: url("../../assets/banner_turismo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginContainer .title {
+  margin-bottom: 1rem;
+}
+
+.loginContainer .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+  width: 350px;
+}
+
+.loginContainer .form > * {
+  border: none;
+  border: solid 1px #9b9b9b;
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+}
+
+.loginContainer .form .btnSubmit,
+.loginContainer .form .btnGoogle {
+  color: white;
+  font-weight: 700;
+}
+
+.loginContainer .form .btnSubmit:hover,
+.loginContainer .form .btnGoogle:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.loginContainer .form .btnSubmit {
+  background-color: #4ea1ff;
+}
+
+.loginContainer .form .btnGoogle {
+  background-color: #fda81f;
+}
+/*# sourceMappingURL=Login.module.css.map */
