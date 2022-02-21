@@ -13,6 +13,7 @@ import {
 } from './pages';
 
 import './App.scss';
+import Detail from './pages/serviceDetail/detail';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/products' element={<Login />} />
         <Route path='/services' element={<Services />} />
+        <Route path='/detail' element={<Detail />} />
       </Routes>
 
 

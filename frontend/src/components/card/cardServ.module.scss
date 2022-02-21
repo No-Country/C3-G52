@@ -1,0 +1,70 @@
+.frameCard{
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,2fr));
+    width: 50% ;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 3px #bbb;  //rgb(247,148,29)
+    margin-left: 5%;
+    max-height: 250px;
+    img{
+        border-radius: 12%;
+        margin-top: 3%;
+        display: inline-block;
+        text-align: right;
+    }
+    h2{
+        font-family:'Lucida Sans';
+        color:#000;
+        // color:rgb(247,148,29);
+        text-align: left;
+        padding-left: 7%;
+        line-height:0.9em;
+        padding-top: 1%;
+        
+    }
+    h3{
+        font-size: 1.7em;
+        color: #8cc540;
+        padding-left: 7%;
+        font-family:'Lucida Sans';
+        margin: 0px;
+        display:inline-block;
+    }
+    h6{
+        display:inline-block;
+        font-size: 0.6em;
+        color: #aaa;
+        margin-left: 9%;
+        
+    }
+    h5{
+        color:rgb(247,148,29);
+        display:inline-block;
+        font-size: 0.7em;
+        margin-top: 0px;
+    }
+    p{
+        text-align: left;
+        font-size: 0.9em;
+        padding-left: 7%;
+        padding-right: 7%;
+        max-height: 36%;
+        overflow:hidden;
+    }
+}
+.here{
+    margin-left: 18%;
+    display:inline-block;
+
+    img{
+        display:inline-block;
+    }
+    h6{
+        display:inline-block;
+        font-size: 0.6em;
+        color: #aaa;
+        margin-left: 0px; 
+    }
+
+}
