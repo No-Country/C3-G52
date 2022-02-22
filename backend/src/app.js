@@ -3,6 +3,8 @@ require("./database");
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const errorsController = require("./controllers/error.controller");
+const servicesRoutes = require("./routes/services.routes");
 
 app.use(
   cors({
@@ -11,8 +13,7 @@ app.use(
 );
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("funciona");
-});
+app.use("services", servicesRoutes);
+app.use(errorsController);
 
 module.exports = app;
