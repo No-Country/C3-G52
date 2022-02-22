@@ -8,9 +8,9 @@
     "npm": "6.14.x"
   },
   "scripts": {
-    "build": "babel src --out-dir build",
+    "build": "babel backend/src --out-dir build",
     "dev": "nodemon src/index.js --exec babel-node",
-    "start": "node src/index.js",
+    "start": "node backend/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
