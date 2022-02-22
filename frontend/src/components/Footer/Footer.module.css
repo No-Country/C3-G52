@@ -1,0 +1,61 @@
+.container {
+  width: 100%;
+  border-top: 0.15rem solid #cbd5e1;
+  background-color: #c4c4c4;
+  color: #1c1917;
+}
+
+.container section:first-child {
+  padding: 1.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.container section:first-child div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container section:first-child div p {
+  display: inline;
+  font-size: .9rem;
+}
+
+.container section:first-child div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: .85rem;
+}
+
+.container section:last-child {
+  padding: 0.5rem 0;
+  padding-left: 10%;
+  border-top: 0.15rem solid #cbd5e1;
+}
+
+.container section:last-child small {
+  padding-right: 1rem;
+  font-size: .75rem;
+}
+/*# sourceMappingURL=Footer.module.css.map */
