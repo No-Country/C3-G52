@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const Router = express.Router();
-const CompanyController = require('../controllers/company.controller');
+const CompanyController = require("../controllers/company.controller");
 
-Router.post('/', CompanyController.create);
+// Router.post('/', isCompany , CompanyController.create);
 // Router.get('/', CompanyController);
 // Router.get('/list', CompanyController);
 // Router.get('/:id', CompanyController);

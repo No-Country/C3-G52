@@ -1,15 +1,18 @@
-const servicesRoutes = require("express").Router();
+const routerServices = require("express").Router();
 const {
   addService,
   getAllServices,
   getServiceForId,
+  getServiceOfCompany,
 } = require("../controllers/services.controller");
 const Service = require("../models/Service");
 
-servicesRoutes.post("/", addService);
+routerServices.post("/:id_company", addService);
 
-servicesRoutes.get("/all", getAllServices);
+routerServices.get("/all", getAllServices);
 
-servicesRoutes.get("/:id", getServiceForId);
+routerServices.get("/service/:id", getServiceForId);
 
-module.exports = servicesRoutes;
+routerServices.get("/company/:id_company", getServiceOfCompany);
+
+module.exports = routerServices;

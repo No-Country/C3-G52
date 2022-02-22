@@ -1,9 +1,10 @@
-const bcrypt = require('bcrypt');
-const CompanyService = require('../services/company.services');
+const bcrypt = require("bcrypt");
+const CompanyService = require("../services/company.services");
 const Company = new CompanyService();
 
-exports.create = async (req, res) => {
+exports.create = async (req, res, next) => {
   try {
+    if (!req.hasOwnProperty("isCompany")) next();
     const { email, password } = req.body;
     const hashedPassword = bcrypt.hashSync(
       password,
@@ -19,14 +20,14 @@ exports.create = async (req, res) => {
     if (checkExist)
       return res.status(500).json({
         ok: false,
-        msg: 'Company already registered',
+        msg: "Company already registered",
       });
 
     const result = await Company.registerCompany(newCompany);
 
-    if (result.level === 'error') {
+    if (result.level === "error") {
       res.status(500).json({
-        msg: 'Company not created',
+        msg: "Company not created",
       });
     } else {
       res.status(200).json({
@@ -37,7 +38,7 @@ exports.create = async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.status(400).json({
-      msg: 'Something went wrong',
+      msg: "Something went wrong",
     });
   }
 };

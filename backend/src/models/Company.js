@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const Company = new Schema({
+const companySchema = new Schema({
   name: String,
   email: String,
   password: String,
@@ -12,13 +12,21 @@ const Company = new Schema({
   active: Boolean,
   website: String,
   stock: Number,
-  products: {
-    type: Schema.Types.ObjectId,
-    ref: 'Product',
-  },
+  products: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Product",
+    },
+  ],
+  services: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Service",
+    },
+  ],
 });
 
-Company.set('toJSON', {
+companySchema.set("toJSON", {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id;
     delete returnedObject._id;
@@ -27,5 +35,5 @@ Company.set('toJSON', {
   },
 });
 
-const companies = mongoose.model('companies', Company);
-module.exports = company;
+const Company = mongoose.model("Company", companySchema);
+module.exports = Company;
