@@ -1,14 +1,15 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import { 
-  Header, 
-  Footer 
+import {
+  Footer,
+  Navbar
 } from './components';
 
 import { 
   Login,
-  Services
+  Services,
+  Home,
 
 } from './pages';
 
@@ -24,10 +25,11 @@ function App() {
     <div className="App">
 
       {
-        pathname === '/login' || <Header />
+        pathname === '/login' || <Navbar />
       }
 
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/products' element={<Login />} />
         <Route path='/services' element={<Services />} />
