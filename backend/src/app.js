@@ -9,7 +9,13 @@ const routerSign = require("./routes/sign.routes");
 const indexRouter = require("./routes/index.routes");
 app.use(
   cors({
-    origin: ["http://127.0.0.1", "http://localhost", "192.168.2.206", "*"],
+    origin: [
+      "http://127.0.0.1",
+      "http://localhost",
+      "http://localhost:3000",
+      "192.168.2.206",
+      "*",
+    ],
   })
 );
 app.use(express.json());
