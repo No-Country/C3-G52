@@ -7,7 +7,7 @@ const {
 } = require("../controllers/services.controller");
 const Service = require("../models/Service");
 
-routerServices.post("/:id_company", addService);
+routerServices.post("/company/:id_company", addService);
 
 routerServices.get("/all", getAllServices);
 
