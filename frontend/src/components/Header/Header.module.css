@@ -1,0 +1,27 @@
+.image {
+  background-image: url("../../assets/banner_turismo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image section {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #00000006;
+}
+
+.image section h1 {
+  font-size: 7.5vw;
+  color: #fff;
+}
+/*# sourceMappingURL=Header.module.css.map */

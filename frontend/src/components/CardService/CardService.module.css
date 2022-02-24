@@ -1,0 +1,51 @@
+.cardServiceContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  width: 800px;
+}
+
+.cardServiceContainer img {
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.cardServiceContainer .infoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cardServiceContainer .infoFactory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.cardServiceContainer .infoPrice {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.cardServiceContainer .moreInfoBtn {
+  color: white;
+  background-color: #0c78aa;
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+  width: 153px;
+}
+
+.cardServiceContainer .moreInfoBtn:hover {
+  opacity: 0.8;
+}
+/*# sourceMappingURL=CardService.module.css.map */
