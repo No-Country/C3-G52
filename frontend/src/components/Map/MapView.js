@@ -2,23 +2,25 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import "./Map.module.scss";
+import MyMarker from "../marker/Marker";
 
 
 const MapView= () => {
     return (
         
-        <MapContainer  center={{"lat": -27.3742, "lon": -68.0496} } zoom={9}  >
+        <MapContainer  center={{"lat": -27.3742, "lon": -68.0496} } zoom={8}  >
             
             <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' />
+            <MyMarker/>
         </MapContainer>
     )
 }
 export default MapView;
 
-<MapContainer  center={{
+{/* <MapContainer  center={{
             "lat": -27.3742,
             "lon": -68.0496
-            } } zoom={10}  ></MapContainer>
+            } } zoom={8}  ></MapContainer> */}
 
         /* <MapContainer center={[51.505, -0.09]} zoom={13}>
     <TileLayer
