@@ -45,7 +45,7 @@ const clientSchema = new Schema({
 // El_id es cambiado para que se muestre visualmente como uid
 clientSchema.methods.toJSON = function () {
   const { __v, password, _id, ...user } = this.toObject();
-  user.uid = _id;
+  user.id = _id;
   return user;
 };
 

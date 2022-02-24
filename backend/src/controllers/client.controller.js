@@ -1,5 +1,6 @@
 const Client = require("../models/Client");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const getClientById = async (req, res) => {
   const { id } = req.params;
@@ -23,9 +24,7 @@ const AddClient = async (req, res) => {
   // Guardar en BD
   await client.save();
 
-  res.status(201).json({
-    client,
-  });
+  res.status(201).json(client);
 };
 
 const updateClient = async (req, res) => {
@@ -83,7 +82,35 @@ const deleteClient = async (req, res) => {
   res.json(client);
 };
 
+const loginClient = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+    const client = await Client.findOne({ email: email });
+    const passCorrect = !client
+      ? null
+      : await bcrypt.compare(password, client.password);
+
+    if (!passCorrect)
+      throw { name: "Password or email incorrect", number: 401 };
+
+    const objForToken = {
+      id: client._id,
+      email: client.email,
+    };
+
+    const token = jwt.sign(objForToken, process.env.SECRET);
+
+    res.status(200).json({
+      client,
+      token,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
+  loginClient,
   getClientById,
   AddClient,
   updateClient,
