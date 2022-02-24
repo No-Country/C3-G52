@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import CardService from "../card/cardServ";
+import styles from "./styles.module.scss";
 
 export default function ListServices() {
   const [services, setServices] = useState([]);
@@ -14,7 +15,7 @@ export default function ListServices() {
   }, []);
 
   return (
-    <section>
+    <section className={styles.ListServices}>
       <ul>
         {services.length &&
           services.map((service) => (
