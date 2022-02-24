@@ -9,8 +9,12 @@ module.exports = (err, req, res, next) => {
   } else if (err.name === "JsonWebTokenError") {
     res.status(401).end();
   } else {
+    const number = err.number || 503;
     console.log(err.name);
     console.log(err);
-    res.status(503).end();
+    res.status(number).json({
+      succes: "failed",
+      message: err.name,
+    });
   }
 };
