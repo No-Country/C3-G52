@@ -41,7 +41,7 @@ const Services = () => {
 	return (
 		<div className={style.serviceContainer}> 
 
-		<nav>
+		<nav >
 			<ul>
 				<li><p>Actividades</p></li>
 				<li><p>Hospedajes</p></li>

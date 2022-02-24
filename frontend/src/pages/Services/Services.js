@@ -12,8 +12,16 @@ let objMoock={
 
 	const Services = () => {
 	return (
-		<div className={style.container}> Servicios:
+		<div className={style.container}> 
+		<nav className={style.menu}>
+			<ul>
+				<li><p>Actividades</p></li>
+				<li><p>Hospedajes</p></li>
+				<li><p>Traslados</p></li>
+			</ul>
+		</nav>
 		<CardServ name={objMoock.name} img={objMoock.img} description={objMoock.description} price={objMoock.price} />
+		
 		</div>
 	)
 }
