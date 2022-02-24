@@ -1,8 +1,17 @@
-import React from "react";
+import {useContext} from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.scss";
+import { userContext } from "../../contexts/userContext";
 
 export default function Navbar() {
+  const {user, setUser} = useContext(userContext)
+  
+  const handlerClickLogout = () => {
+    localStorage.removeItem("userInfo")
+    setUser(null)
+    console.log(user)
+  }
+
   return (
     <nav className={styles.container}>
       <p>Fiambalá</p>
@@ -32,9 +41,15 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
+          {!user ? 
           <NavLink to="/login">
             Iniciar
           </NavLink>
+          : 
+          <button onClick={handlerClickLogout}>
+            Salir
+          </button>          
+        }
         </li>
       </ul>
     </nav>

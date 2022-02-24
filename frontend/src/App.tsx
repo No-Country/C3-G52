@@ -23,11 +23,7 @@ function App() {
 
   return (
     <div className="App">
-
-      {
-        pathname === '/login' || <Navbar />
-      }
-
+     <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/login' element={<Login />} />
@@ -35,12 +31,7 @@ function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/detail' element={<Detail />} />
       </Routes>
-
-
-      {
-        pathname === '/login' || <Footer />
-      }
-
+      <Footer />
     </div>
   )
 }
