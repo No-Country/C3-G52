@@ -1,10 +1,10 @@
 import React from 'react';
-import { Service } from '../../interfaces';
+// import { Service } from '../../interfaces';
 import { CardService } from '../../components';
 
 import style from './Services.module.scss';
 
-let servicesMoock : Service[] = [
+let servicesMoock = [
 	{
 		id: "1",
 		factory: "Nombre de empresa",

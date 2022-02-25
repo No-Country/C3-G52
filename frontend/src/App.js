@@ -3,7 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import {
   Footer,
-  Navbar
+  Navbar,
+  NavbarHome,
 } from './components';
 
 import { 
@@ -23,9 +24,7 @@ function App() {
   return (
     <div className="App">
 
-      {
-        pathname === '/login' || <Navbar />
-      }
+      {(pathname === '/') ? <NavbarHome /> : <Navbar /> }
 
       <Routes>
         <Route path="/" element={<Home />} />

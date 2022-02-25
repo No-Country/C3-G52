@@ -5,7 +5,7 @@ import style from './Login.module.scss';
 const Login = () => {
 
 
-	const handleOnSubmit = (e: React.SyntheticEvent<HTMLFormElement>)  => {
+	const handleOnSubmit = (e)  => {
 		e.preventDefault();
 		
 	}
