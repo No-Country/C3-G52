@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 import {
@@ -14,7 +14,7 @@ import {
 import './App.scss';
 // import { AiFillPropertySafety } from 'react-icons/ai';
 
-/* function Layout({children}) {
+function Layout({children}) {
   return (
     <>
       <Navbar />
@@ -22,7 +22,7 @@ import './App.scss';
       <Footer />
     </>    
   )
-} */
+} 
 
 function App() {
 
@@ -36,17 +36,18 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path='/login' element={<Login />} />
-        {/* <Route path="/" element={<Navbar />}>
+        
+        <Route path="/" element={<Navbar />}>
           <Route path='products' element={<Products />} />
           <Route path='services' element={<Services />} />
           <Route path='login' element={<Login />} />
-        </Route> */}
+        </Route>
 
-        {/* <Route element={<Layout />}>
+        <Route element={<Layout />}>
           <Route path='/products' element={<Products />} />
           <Route path='services' element={<Services />} />
           <Route path='/login' element={<Login />} />
-        </Route> */}
+        </Route>
       </Routes>
 
       {
@@ -57,4 +58,4 @@ function App() {
   )
 }
 
-export default App;
+export default App; */

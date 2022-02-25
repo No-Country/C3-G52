@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Home.module.scss";
-
+import MapView from "../../components/Map/MapView";
 import {
-  NavbarHome, Header, Map, Cards, KnowMore
+  Header, NavbarHome, KnowMore
 } from '../../components';
+import FormMap from "../../components/FormMap/index.js";
 
 function Home() {
   return (
@@ -11,8 +12,11 @@ function Home() {
       <NavbarHome />
       <Header />
       <div className={styles.container}>
-        <Map />  
-        <Cards id="about" />
+        <div className={styles.containerMap}>
+        <FormMap/>
+        <MapView/>
+        </div>
+        {/* <Cards /> */}
         <KnowMore />
       </div>
     </>

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { userContext } from "../../contexts/userContext";
 
 import styles from "./Navbar.module.scss";
 
@@ -7,6 +8,14 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 
 export default function Navbar() {
+
+  const {user, setUser} = useContext(userContext)
+  
+  const handlerClickLogout = () => {
+    localStorage.removeItem("userInfo")
+    setUser(null)
+    console.log(user)
+  }
 
   const [menuOpen, setMenuOpen] = useState(false);
   
@@ -45,7 +54,7 @@ export default function Navbar() {
             Productos
           </NavLink>
         </li>
-        {/* <li>
+        <li>
           <NavLink
             to="/services"
             style={({ isActive }) => ({
@@ -54,9 +63,9 @@ export default function Navbar() {
           >
             Servicios
           </NavLink>
-        </li> */}
+        </li>
         <li>
-          <NavLink 
+          {/* <NavLink 
             to="/login"
             className={styles.login}
             style={({ isActive }) => ({
@@ -64,7 +73,22 @@ export default function Navbar() {
             })}
           >
             Iniciar
-          </NavLink>
+          </NavLink> */}
+          {!user ? 
+            <NavLink 
+              to="/login"
+              className={styles.login}
+              style={({ isActive }) => ({
+                borderBottom: isActive ? '3px solid rgba(255, 255, 255, 0.6)' : '',
+              })}
+            >
+              Iniciar
+            </NavLink>
+            : 
+            <button onClick={handlerClickLogout}>
+              Salir
+            </button>          
+          }
         </li>
       </ul>
       <div className={styles.menuIcon} onClick={handleMenuOpen}>
