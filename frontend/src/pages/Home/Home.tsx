@@ -4,14 +4,18 @@ import MapView from "../../components/Map/MapView";
 import {
   Header, Cards, KnowMore
 } from '../../components';
+import FormMap from "../../components/FormMap/index.js";
 
 function Home() {
   return (
     <>
       <Header />
       <div className={styles.container}>
+        <div className={styles.containerMap}>
+        <FormMap/>
         <MapView/>
-        <Cards />
+        </div>
+        {/* <Cards /> */}
         <KnowMore />
       </div>
     </>

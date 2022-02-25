@@ -1,4 +1,18 @@
+@font-face {
+    font-family: "Monserrat";
+    src: "./assets/Montserrat-Regular.otf";
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+}
+
 .leaflet-container{
     width: 90vw;
     height: 30vw;
+}
+
+*{
+    // font-family: Roboto;
 }

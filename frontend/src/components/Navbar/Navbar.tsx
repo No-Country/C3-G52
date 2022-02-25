@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className={styles.container}>
-      <p>Fiambalá</p>
+      <p >Fiambalá</p>
       <ul>
         <li>
           <NavLink
