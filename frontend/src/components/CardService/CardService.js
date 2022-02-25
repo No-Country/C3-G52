@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Service } from '../../interfaces';
+// import { Service } from '../../interfaces';
 import style from './CardService.module.scss';
 
 
-const CardService : React.FC<Service> = ({id, factory, location, name, description, price, img}) =>{
+const CardService= ({id, factory, location, name, description, price, img}) =>{
     return (
         <div className={style.cardServiceContainer}>
             <img src={img} alt=''></img>

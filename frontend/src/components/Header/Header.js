@@ -7,7 +7,7 @@ function Header() {
     <div className={styles.image}>
       <section>
         <h1>
-          Hola
+          Fiambalá
         </h1>
       </section>
     </div>

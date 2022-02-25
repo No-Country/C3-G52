@@ -8,9 +8,9 @@ import './reset.scss';
 
 render(
   <Provider store={store}>
-  <Router >
-    <App />
-  </Router>
-</Provider>,
+    <Router >
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 )
