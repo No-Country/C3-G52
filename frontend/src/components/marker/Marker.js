@@ -1,10 +1,15 @@
 import React from "react";
 import {Marker} from "react-leaflet";
-import {LocationIcon} from "./VenueLocationIcon";
+import {LocationIcon, LocationHotel} from "./VenueLocationIcon";
 
-const MyMarker = () => {
+
+const MyMarker = ({lat,long, ico}) => {
+    let icono= LocationIcon;
+    if( ico && ico=== "H" ) {
+        icono= LocationHotel;
+    }
     return (
-        <Marker position={{lat:"-27.3742769412864" , lng:"-68.0496004163813"}} icon={LocationIcon} />
+        <Marker position={{ lat: lat , lng: long }} icon={icono} />
     )
 }
 export default MyMarker;
