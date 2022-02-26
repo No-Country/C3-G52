@@ -1,17 +1,33 @@
-import React from 'react';
-import Mapa from '../../components/Mapa.jsx';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import img from '../../components/imgs/img';
+import style from "./detail.module.scss";
+
+const useParamID = ()=> {  let {id}= useParams(); 
+	return id;
+}
+
+const Detail = () => {
+	let id = useParamID(); 
+
+	const [service, setService] = useState();
+
+	
+	
 
 
-
-
-	const Detail = () => {
 	return (
-		<div className='container'> Un Servicio En Particular:
-		<Mapa
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"
-        />
+		<div className={style.container}> 
+		<img src={img.icon} alt="algo" />
+		<h2>Un servicio {`en particular con id: ${id}`}</h2>
 		</div>
 	)
+}
+
+const useCallforID =  async(id)=> {  
+let objS= await fetch(`https://backend-c3.herokuapp.com/services/service/${id}`).then((res) => res.json())
+console.log(objS);
+return objS;
 }
 
 export default Detail;
