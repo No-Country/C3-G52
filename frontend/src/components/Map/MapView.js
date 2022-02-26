@@ -5,13 +5,21 @@ import "./Map.module.scss";
 import MyMarker from "../marker/Marker";
 
 
-const MapView= () => {
+
+const MapView= ({z, centro , markers , ico }) => {
+    let index=1;
     return (
         
-        <MapContainer  center={{"lat": -27.3742, "lon": -68.0496} } zoom={8}  >
+        <MapContainer  center={centro} zoom={z}  >
             
             <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' />
-            <MyMarker/>
+            <MyMarker  lat={-27.69194}  long={-67.6249899} ico={""}/>
+            {markers && markers.length && markers.map(el => {
+                index += 1;
+                return (
+                    <MyMarker lat={el.lat} long={el.lon} ico={ico} key={index}/>
+                )
+            })}
         </MapContainer>
     )
 }

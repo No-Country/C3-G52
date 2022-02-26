@@ -21,7 +21,7 @@ export default function ListServices() {
       <ul className={styles.grids}>
         {services.length &&
           services.map((service) => (
-            <Link to={`/detail/${service.id}`} >
+            <Link to={`/detail/${service.id}`}  key={service.id}>
             <CardService
               name={service.title}
               img={service.pics[0]}

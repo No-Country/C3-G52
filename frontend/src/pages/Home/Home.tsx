@@ -5,12 +5,14 @@ import {
   Header, Cards, KnowMore
 } from '../../components';
 
+let markerPoint = [{"lat": -27.6899696, "lon": -67.6189819 }] 
+
 function Home() {
   return (
     <>
       <Header />
       <div className={styles.container}>
-        <MapView/>
+        <MapView z={7} centro={{"lat": -27.6899696, "lon": -67.6189819 }} markers={markerPoint} ico={""} />
         <Cards />
         <KnowMore />
       </div>
