@@ -8,14 +8,9 @@
     margin-left: 5%;
     box-sizing: border-box;
     
-    img{
-        border-radius: 12%;
-        margin-top: 3%;
-        display: inline-block;
-        text-align: right;
-    }
+    
     h2{
-        font-family:'Lucida Sans';
+        font-family: 'Signika', sans-serif;
         color:#000;
         // color:rgb(247,148,29);
         text-align: left;
@@ -55,7 +50,7 @@
     }
 }
 .here{
-    margin-left: 18%;
+    margin-left: 17%;
     display:inline-block;
     height:auto;
     padding-bottom: 0px;
@@ -73,9 +68,12 @@
 
 }
 .imgserv{
-    border-radius: 12%;
-    margin-top: 3%;
-    display: inline-block;
+    border-radius: 4px;
+    height: 200px;
+    width: 25vw;
+    max-width: 400px;
+    object-fit: cover;
+    
     text-align: right;
     object-fit: cover;
 }
@@ -100,6 +98,11 @@
         h3{
             font-size: 1.2em;
         }
+        .imgserv{
+            width: 90vw;
+            height: 150px;
+            text-align: center;
+        }
     }
     .here{
         margin-left: 7%;
@@ -114,8 +117,21 @@
     }
     .hereLog{
         height: 27px;
+        width: 27;
     }
     .imgserv{
         width: 98%;
+    }
+}
+
+.moreInfoBtn{
+    color: white;
+    background-color: rgb(12, 120, 170);
+    padding: 0.3rem 1rem;
+    border-radius: 10px;
+    width: 153px;
+
+    &:hover{
+        opacity: 0.8;
     }
 }
