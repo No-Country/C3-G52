@@ -7,7 +7,7 @@ import MyMarker from "../marker/Marker";
 const MapView = ({ z, centro, markers, ico }) => {
   let index = 1;
   return (
-    <MapContainer center={centro} zoom={z}>
+    <MapContainer center={centro} zoom={z} style={{ width: "100%" }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

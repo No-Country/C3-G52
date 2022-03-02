@@ -13,7 +13,11 @@ function Home() {
       <div className={styles.container}>
         <div className={styles.containerMap}>
           <FormMap />
-          <MapView />
+          <MapView
+            z={7}
+            centro={{ lat: -27.6899696, lon: -67.6189819 }}
+            ico={""}
+          />
         </div>
         {/* <Cards /> */}
         <KnowMore />

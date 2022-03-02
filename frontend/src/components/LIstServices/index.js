@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import CardService from "../card/cardServ";
 import styles from "./styles.module.scss";
-import { Link } from "react-router-dom";
-
 
 export default function ListServices() {
   const [services, setServices] = useState([]);
@@ -21,14 +19,14 @@ export default function ListServices() {
       <ul className={styles.grids}>
         {services.length &&
           services.map((service) => (
-            <Link to={`/detail/${service.id}`}  key={service.id}>
             <CardService
+              id={service.id}
+              key={service.id}
               name={service.title}
               img={service.pics[0]}
               description={service.description}
               price={service.price}
             />
-            </Link>
           ))}
       </ul>
     </section>
