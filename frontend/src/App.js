@@ -3,7 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import {
   Footer,
-  Navbar
+  Navbar,
+  NavbarHome,
 } from './components';
 
 import { 

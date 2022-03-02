@@ -52,7 +52,7 @@ const Footer = () => {
 				</div>
 			</section>
 			<section>
-				<small>Copyright © 2022 fiambala.com</small>
+				<small>Copyright © 2022 nc-turismo.com</small>
 				<small>Dirección</small>
 				<small>Todos los derechos reservados.</small>
 			</section>
