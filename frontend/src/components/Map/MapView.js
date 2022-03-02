@@ -4,24 +4,21 @@ import "leaflet/dist/leaflet.css";
 import "./Map.module.scss";
 import MyMarker from "../marker/Marker";
 
-const MapView = () => {
+const MapView = ({ z, centro, markers, ico }) => {
+  let index = 1;
   return (
-    <MapContainer
-      center={{ lat: -27.683333, lon: -67.633333 }}
-      zoom={6}
-      style={{
-        width: "100%",
-        zIndex: -1,
-        borderRadius: "11px",
-        "border-top-left-radius": 0,
-        "border-bottom-left-radius": 0,
-      }}
-    >
+    <MapContainer center={centro} zoom={z}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      <MyMarker />
+      <MyMarker lat={-27.69194} long={-67.6249899} ico={""} />
+      {markers &&
+        markers.length &&
+        markers.map((el) => {
+          index += 1;
+          return <MyMarker lat={el.lat} long={el.lon} ico={ico} key={index} />;
+        })}
     </MapContainer>
   );
 };

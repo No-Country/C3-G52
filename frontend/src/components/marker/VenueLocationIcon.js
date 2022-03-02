@@ -11,3 +11,14 @@ export const LocationIcon = L.icon({
   iconSize: [35, 35],
   className: "leaflet-venue-icon",
 });
+
+export const LocationHotel = L.icon({
+  iconUrl: imgs.icon2,
+  iconRetinaUrl: imgs.icon2,
+  iconAnchor: null,
+  shadowUrl: null,
+  shadowSize: null,
+  shadowAnchor: null,
+  iconSize: [35, 35],
+  className: "leaflet-venue-icon",
+});

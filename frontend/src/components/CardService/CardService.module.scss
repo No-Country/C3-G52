@@ -1,40 +1,30 @@
-.cardServiceContainer{
-	display: flex;
-	gap: 1rem;
-	width: 800px;
+// .cardServiceContainer{
+// 	display:grid;
+	
 
-	img{
-		max-width: 400px;
-		border-radius: 10px;
-	}
+// 	img{
+		
+// 		border-radius: 2px;
+// 	}
 
-	.infoContainer{
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
+// 	.infoContainer{
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: space-between;
 
-	.infoFactory{
-		display: flex;
-		font-size: 0.85rem;
-		font-weight: 400;
-	}
+// 	}
 
-	.infoPrice{
-		font-size: 1.2rem;
-		font-weight: 700;
-	}
+// 	.infoFactory{
+// 		display: flex;
+// 		font-size: 0.85rem;
+// 		font-weight: 400;
+// 	}
 
-	.moreInfoBtn{
-		color: white;
-		background-color: rgb(12, 120, 170);
-		padding: 0.3rem 1rem;
-		border-radius: 10px;
-		width: 153px;
+// 	.infoPrice{
+// 		font-size: 1.2rem;
+// 		font-weight: 700;
+// 	}
 
-		&:hover{
-			opacity: 0.8;
-		}
-	}
+	
 
-}
+// }
