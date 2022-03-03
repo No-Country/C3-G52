@@ -41,10 +41,6 @@ const Detail = () => {
 	)
 }
 
-const useCallforID =  async(id)=> {  
-let objS= await fetch(`https://backend-c3.herokuapp.com/services/service/${id}`).then((res) => res.json())
-console.log(objS);
-return objS;
-}
+
 
 export default Detail;
