@@ -1,6 +1,6 @@
 import React from 'react';
-
 import style from './Login.module.scss';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -22,7 +22,10 @@ const Login = () => {
 				<input type="text" name="password" placeholder='Ingresa tu contraseña'/>
 				<button className={style.btnSubmit} type="submit">Ingresar</button>
 				<button className={style.btnGoogle}>Ingresar con google</button>	
-
+				<label className={style.label}>  ó</label>
+				<Link to={`/checkin`}>
+				<button className={style.btnRegister} type="submit">Registrarse</button>
+				</Link>
 			</form>
 		</div>
 	)
