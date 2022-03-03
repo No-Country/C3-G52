@@ -3,6 +3,7 @@ import CardServ from "../../components/card/cardServ.js";
 import imgs from "../../components/imgs/img.js";
 import style from "./Services.module.scss";
 import ListServices from "../../components/LIstServices";
+import nightSky from "../../components/video/nightSky.mp4";
 
 let objMoock = {
   name: "Aguas Termales",
@@ -15,9 +16,20 @@ let objMoock = {
 const Services = () => {
   return (
     <div className={style.container}>
+      <video autoPlay loop muted 
+      style={{
+        position:"absolute",
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        zIndex: -1,
+      }}
+      >
+        <source src={nightSky} type="video/mp4" />
+      </video>
       <ul>
         <h2>Hospedajes</h2>
-        <h2>actividades</h2>
+        <h2>Actividades</h2>
         <h2>Traslados</h2>
       </ul>
       <ListServices />
