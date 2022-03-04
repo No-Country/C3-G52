@@ -9,7 +9,7 @@ export default function ListServices() {
 
   useEffect(() => {
     fetch(
-      "https://backend-c3.herokuapp.com/services/company/6214db5aa039b33b05c3c770"
+      "https://backend-c3.herokuapp.com/services/company/6221690a01ddb0e77840ed4c"
     )
       .then((res) => res.json())
       .then(setServices)

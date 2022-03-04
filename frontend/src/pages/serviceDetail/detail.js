@@ -25,8 +25,9 @@ const Detail = () => {
 
 	return (
 		<div className={style.container}> 
-		<img src={img.icon} alt="algo" />
+		<img src={img.icon} alt="algo" className={style.marker} />
 		<h2>Un servicio {`en particular con id: ${id}`}</h2>
+		<MapView z={12} centro={{"lat": -27.6899696, "lon": -67.6189819 }} markers={detailPoint} ico={"H"}  className={style.mapadetail}/>
 		<h3>{service.price}</h3>
 		{service && service.pics?.map(el=>{
 			
@@ -35,7 +36,7 @@ const Detail = () => {
 			)
 		}) }
 		<p> Aquí debería aparecer el mapa:</p>
-		<MapView z={12} centro={{"lat": -27.6899696, "lon": -67.6189819 }} markers={detailPoint} ico={"H"}  className={style.mapadetail}/> 
+		
 		
 		</div>
 	)
