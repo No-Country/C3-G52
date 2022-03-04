@@ -3,10 +3,14 @@ import React from 'react';
 import style from './check.module.scss';
 
 const CheckIn = () => {
-
-
+	
 	const handleOnSubmit = (e)  => {
 		e.preventDefault();
+		
+	}
+	const handleBLUR = (e)  => {
+		e.preventDefault();
+		alert("el evento se ejecutó ahora");
 		
 	}
 
@@ -18,7 +22,7 @@ const CheckIn = () => {
 				className={style.form} 
 				onSubmit={handleOnSubmit}>
 
-				<input type="text" name="email" placeholder='Ingresa tu correo'/>
+				<input type="text" name="email" placeholder='Ingresa tu correo' autoFocus="true" onfocusout={handleBLUR} />
 				<input type="text" name="password1" placeholder='Ingresa tu contraseña'/>
                 <input type="text" name="password2" placeholder='Confirma tu contraseña'/>
 				<button className={style.btnSubmit} type="submit">Registrarse</button>
