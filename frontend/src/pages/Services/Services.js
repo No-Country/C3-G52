@@ -33,10 +33,8 @@ const Services = () => {
         <h2>Traslados</h2>
       </ul>
       <ListServices />
-      {/* <CardServ name={objMoock.name} img={objMoock.img} description={objMoock.description} price={objMoock.price} /> */}
     </div>
   );
 };
 
 export default Services;
-
