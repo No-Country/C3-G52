@@ -85,7 +85,9 @@ const deleteClient = async (req, res) => {
 const loginClient = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    const client = await Client.findOne({ email: email });
+    const client = await Client.findOne({ email: email }).populate(
+      "services_hired"
+    );
     const passCorrect = !client
       ? null
       : await bcrypt.compare(password, client.password);

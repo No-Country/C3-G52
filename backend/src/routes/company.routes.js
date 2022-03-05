@@ -1,10 +1,7 @@
-const express = require("express");
-const Router = express.Router();
+const { Router } = require("express");
+const routerCompany = Router();
 const CompanyController = require("../controllers/company.controller");
 
-// Router.post('/', isCompany , CompanyController.create);
-// Router.get('/', CompanyController);
-// Router.get('/list', CompanyController);
-// Router.get('/:id', CompanyController);
-// Router.put('/:id', CompanyController);
-// Router.delete('/:id', CompanyController;
+routerCompany.put("/:id_company", CompanyController.updateInfoCompany);
+
+module.exports = routerCompany;

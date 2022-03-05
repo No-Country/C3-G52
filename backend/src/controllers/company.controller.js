@@ -1,17 +1,15 @@
 const bcrypt = require("bcrypt");
-const CompanyService = require("../services/company.services");
-const Company = new CompanyService();
-const modelCompany = require("../models/Company");
+const Company = require("../models/Company");
 const jwt = require("jsonwebtoken");
 
-exports.register = async (req, res, next) => {
+const register = async (req, res, next) => {
   try {
     if (!req.hasOwnProperty("isCompany")) return next();
     const { name, email, password } = req.body;
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const company = new modelCompany({
+    const company = new Company({
       name,
       email,
       password: hashedPassword,
@@ -29,11 +27,11 @@ exports.register = async (req, res, next) => {
   }
 };
 
-exports.login = async (req, res, next) => {
+const login = async (req, res, next) => {
   try {
     if (!req.hasOwnProperty("isCompany")) return next();
     const { email, password } = req.body;
-    const company = await modelCompany.findOne({ email });
+    const company = await Company.findOne({ email });
     const passCorrect = !company
       ? null
       : await bcrypt.compare(password, company.password);
@@ -56,43 +54,27 @@ exports.login = async (req, res, next) => {
   }
 };
 
-exports.create = async (req, res, next) => {
+const updateInfoCompany = async (req, res, next) => {
   try {
-    if (!req.hasOwnProperty("isCompany")) return next();
-    const { email, password } = req.body;
-    const hashedPassword = bcrypt.hashSync(
-      password,
-      bcrypt.genSaltSync(10),
-      null
+    const { id_company: id } = req.params;
+    const { name, email, location, pic_url, website } = req.body;
+    const company = await Company.findByIdAndUpdate(
+      id,
+      { name, email, location, pic_url, website },
+      { new: true }
     );
-    const newCompany = {
-      email: email,
-      password: hashedPassword,
-    };
 
-    const checkExist = await Company.getCompanyByEmail(email);
-    if (checkExist)
-      return res.status(500).json({
-        ok: false,
-        msg: "Company already registered",
-      });
+    console.log(company);
+    if (!company) throw { name: "company not found", number: 404 };
 
-    const result = await Company.registerCompany(newCompany);
-
-    if (result.level === "error") {
-      res.status(500).json({
-        msg: "Company not created",
-      });
-    } else {
-      res.status(200).json({
-        ok: true,
-        company: newCompany,
-      });
-    }
+    res.status(201).json(company);
   } catch (error) {
-    console.log(error);
-    return res.status(400).json({
-      msg: "Something went wrong",
-    });
+    next(error);
   }
+};
+
+module.exports = {
+  login,
+  register,
+  updateInfoCompany,
 };

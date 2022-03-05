@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-const { Schema } = mongoose;
+const { Schema, model } = require("mongoose");
 
 const companySchema = new Schema({
   name: String,
@@ -7,11 +6,8 @@ const companySchema = new Schema({
   password: String,
   location: String,
   pic_url: String,
-  description: String,
-  price: Number,
   active: Boolean,
   website: String,
-  stock: Number,
   products: [
     {
       type: Schema.Types.ObjectId,
@@ -35,5 +31,5 @@ companySchema.set("toJSON", {
   },
 });
 
-const Company = mongoose.model("Company", companySchema);
+const Company = model("Company", companySchema);
 module.exports = Company;

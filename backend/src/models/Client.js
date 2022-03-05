@@ -49,4 +49,6 @@ clientSchema.methods.toJSON = function () {
   return user;
 };
 
-module.exports = model("Client", clientSchema);
+const Client = model("Client", clientSchema);
+
+module.exports = Client;
