@@ -1,9 +1,12 @@
 .container {
+    position: relative;
+    bottom:0;
     width: 100%;
+    min-height: fit-content;
     border-top: 0.15rem solid #cbd5e1;
     background-color: #c4c4c4;
     color: #1c1917;
-    
+
     section:first-child {
         padding: 1.5rem 0;
         display: flex;
@@ -14,7 +17,7 @@
         div {
             display: flex;
             flex-direction: column;
-         
+            
             p {
                 display: inline;
                 font-size: .9rem;

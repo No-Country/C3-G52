@@ -3,7 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import {
   Footer,
-  Navbar
+  Navbar,
+  NavbarHome,
 } from './components';
 
 import { 
@@ -24,11 +25,7 @@ function App() {
 
   return (
     <div className="App">
-
-      {
-        pathname === '/login' || <Navbar />
-      }
-
+     <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/login' element={<Login />} />
@@ -37,12 +34,7 @@ function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/detail/:id' element={<Detail />} />
       </Routes>
-
-
-      {
-        pathname === '/login' || <Footer />
-      }
-
+      <Footer />
     </div>
   )
 }
