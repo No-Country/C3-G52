@@ -16,6 +16,7 @@ import {
 
 import './App.scss';
 import Detail from './pages/serviceDetail/detail';
+import CheckIn from './pages/checkIn/check.js';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/checkin' element={<CheckIn />} />
         <Route path='/products' element={<Login />} />
         <Route path='/services' element={<Services />} />
         <Route path='/detail/:id' element={<Detail />} />

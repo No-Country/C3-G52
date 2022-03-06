@@ -6,9 +6,7 @@ export default function ListServices() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://backend-c3.herokuapp.com/services/company/6214db5aa039b33b05c3c770"
-    )
+    fetch("https://backend-c3.herokuapp.com/services/all")
       .then((res) => res.json())
       .then(setServices)
       .catch((err) => console.log(err));

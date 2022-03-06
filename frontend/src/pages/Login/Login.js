@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import style from "./Login.module.scss";
 import { userContext } from "../../contexts/userContext";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const { user, setUser } = useContext(userContext);
@@ -92,6 +93,11 @@ export default function Login() {
           onChange={handleChangeCheckbox}
         />
         <button className={style.btnSubmit}>Ingresar</button>
+        <Link to={`/checkin`}>
+          <button className={style.btnRegister} type="submit">
+            Registrarse
+          </button>
+        </Link>
         {/* <button className={style.btnGoogle}>Ingresar con google</button> */}
       </form>
     </div>
