@@ -1,0 +1,139 @@
+.createServiceSection{
+  padding: 0 1em;
+}
+
+.createServiceForm{
+  padding: 60px 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 270px;
+  column-gap: .5em;
+}
+
+.containerInputImage{
+
+  & > img{
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgb(209, 209, 209);
+  }
+}
+
+.containerInfo{
+  border-left: .5px solid rgba(128, 128, 128, 0.2);
+  padding: 1em 1.2em;
+
+  & input{
+    background-color: #d7d7d7;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    color: rgb(176, 41, 189);
+    padding: .5em;
+  }
+
+
+  &  label {
+    font-weight: bold;
+  }
+}
+
+.titleInfo{
+  font-size: 2em;
+  font-weight: 500;
+  color: rgb(80, 80, 80);
+}
+
+.titleInfo::placeholder{
+  color: rgb(109, 109, 109);
+}
+
+.containerOpinions, .containerLocations, .containerCompany{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: .9em auto;
+  & > p{
+      color: rgb(100, 100, 100);
+  } 
+  & > ul{
+      display: flex;
+  }
+
+  & input{
+    font-size: 16px;
+  }
+
+  &  input::placeholder {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(109, 109, 109);
+  }
+}
+
+
+.containerDescription{
+  display: flex;
+  flex-direction: column;
+
+  & textarea{
+    height: 140px;
+    background-color: #d7d7d7;
+    border-radius: 6px;
+    border: none;
+    padding: .5em;  
+    resize: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(80, 80, 80);
+  }
+
+  & textarea::placeholder{
+    // font-weight: bold;
+    font-size: 18px;
+    color: rgb(109, 109, 109);
+  }
+  
+}
+
+
+.containerPrePayment{
+  border-left: .5px solid rgba(128, 128, 128, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
+
+
+  & span {
+    color: #4ad332;
+
+  }
+
+  & input{
+    background-color: #d7d7d7;
+    border: none;
+    font-size: 16px;
+    padding: .4em;
+    color: #3d32d3;
+    width: 100px;
+    border-radius: 6px;
+  }
+
+  &  input::placeholder {
+    font-size: 16px;
+    font-weight: 600;
+    color: #231c88a2;
+  }
+}
+
+.buttonPrePayment{
+  border: none;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: white;
+  font-size: .9em;
+  padding: 1em 2em;
+  background-color: green;
+}

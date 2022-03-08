@@ -10,6 +10,7 @@ import Detail from "./pages/serviceDetail/detail";
 import CheckIn from "./pages/checkIn/check.js";
 import { useContext } from "react";
 import { userContext } from "./contexts/userContext";
+import CreateService from "./pages/CreateService";
 
 function App() {
   const { user } = useContext(userContext);
@@ -36,6 +37,7 @@ function App() {
         />
         )
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/createService" element={<CreateService />} />
       </Routes>
       <Footer />
     </div>
