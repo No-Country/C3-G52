@@ -1,38 +1,62 @@
-import React from "react";
-import CardServ from "../../components/card/cardServ.js";
-import imgs from "../../components/imgs/img.js";
 import style from "./Services.module.scss";
-import ListServices from "../../components/LIstServices";
 import nightSky from "../../components/video/nightSky.mp4";
+import { Link, useLocation } from "react-router-dom";
+import ListServices from "../../components/LIstServices";
+import useServices from "../../hooks/useServices";
+import { useEffect } from "react";
+import { userContext } from "../../contexts/userContext";
+import { useContext } from "react";
 
-let objMoock = {
-  name: "Aguas Termales",
-  img: imgs.termas, //"https://t2.uc.ltmcdn.com/images/3/3/6/img_como_saber_si_mi_loro_es_macho_o_hembra_23633_600_square.jpg",
-  price: `$ ${2000}`,
-  description:
-    "Espectaculares aguas terapéuticas bordeadas por una vegetación típica de la zona. Las piscinas están al aire libre y sus “baños de chorro” permiten el acceso de los visitantes a las aguas termales hipertérmicas, alcalinas, hipotónicas y ricas en algas verdes  ... cuya temperatura se encuentra entre 38ºC  y 70ºC.",
-};
+const Services = ({ type }) => {
+  const { user } = useContext(userContext);
+  const id = user ? user.id : "";
+  const is = user ? user.is : "";
+  const { services, setTypeServices, setId } = useServices(type, id || "");
+  const { pathname } = useLocation();
+  useEffect(() => {
+    setTypeServices(type);
+    setId(id);
+  }, [type, id]);
 
-const Services = () => {
   return (
     <div className={style.container}>
-      <video autoPlay loop muted 
-      style={{
-        position:"absolute",
-        width: "100%",
-        height: "100%",
-        objectFit: "cover",
-        zIndex: -1,
-      }}
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: -1,
+        }}
       >
         <source src={nightSky} type="video/mp4" />
       </video>
       <ul>
+        <Link
+          to={"/services"}
+          className={pathname === "/services" && style.active}
+        >
+          Todos
+        </Link>
         <h2>Hospedajes</h2>
         <h2>Actividades</h2>
-        <h2>Traslados</h2>
+        <Link
+          to={"/services/myServices"}
+          className={pathname === "/services/myServices" && style.active}
+        >
+          Mis Servicios
+        </Link>
       </ul>
-      <ListServices />
+      {pathname.includes("/services/myServices") && is === "company" && (
+        <Link className={style.buttonCreateService} to={"/createService"}>
+          {" "}
+          Añadir Un Nuevo Servicio
+        </Link>
+      )}
+      <ListServices services={services} />
     </div>
   );
 };

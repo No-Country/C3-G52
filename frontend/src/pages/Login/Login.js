@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import style from "./Login.module.scss";
 import { userContext } from "../../contexts/userContext";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const { user, setUser } = useContext(userContext);
@@ -44,23 +45,24 @@ export default function Login() {
         let userData = {};
         let is = "";
         if (resUser.hasOwnProperty("company")) {
-          userData = resUser.company;
           is = "company";
         } else {
-          userData = resUser.client;
           is = "client";
         }
+        userData = resUser[is];
         localStorage.setItem(
           "userInfo",
           JSON.stringify({
             name: userData.name || "",
             email: userData.email,
             id: userData.id,
-            token: token,
+            token,
+            is,
           })
         );
 
         setUser({
+          id: userData.id,
           name: userData.name,
           email: userData.email,
           is,
@@ -92,6 +94,11 @@ export default function Login() {
           onChange={handleChangeCheckbox}
         />
         <button className={style.btnSubmit}>Ingresar</button>
+        <Link to={`/checkin`}>
+          <button className={style.btnRegister} type="submit">
+            Registrarse
+          </button>
+        </Link>
         {/* <button className={style.btnGoogle}>Ingresar con google</button> */}
       </form>
     </div>

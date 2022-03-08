@@ -1,42 +1,45 @@
-import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import React from "react";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
-import {
-  Footer,
-  Navbar,
-  NavbarHome,
-} from './components';
+import { Footer, Navbar, NavbarHome } from "./components";
 
-import { 
-  Login,
-  Services,
-  Home,
+import { Login, Services, Home } from "./pages";
 
-} from './pages';
-
-import './App.scss';
-import Detail from './pages/serviceDetail/detail';
-import CheckIn from './pages/checkIn/check.js';
-
+import "./App.scss";
+import Detail from "./pages/serviceDetail/detail";
+import CheckIn from "./pages/checkIn/check.js";
+import { useContext } from "react";
+import { userContext } from "./contexts/userContext";
 
 function App() {
-
+  const { user } = useContext(userContext);
   const { pathname } = useLocation();
 
   return (
     <div className="App">
-     <Navbar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/checkin' element={<CheckIn />} />
-        <Route path='/products' element={<Login />} />
-        <Route path='/services' element={<Services />} />
-        <Route path='/detail/:id' element={<Detail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/checkin" element={<CheckIn />} />
+        <Route path="/products" element={<Login />} />
+        <Route path="/services" element={<Services type="all" />} />
+        <Route
+          path="services/myServices"
+          element={
+            user ? (
+              <Services type="servicesOfCompany" />
+            ) : (
+              <Navigate to="/services" />
+            )
+          }
+        />
+        )
+        <Route path="/detail/:id" element={<Detail />} />
       </Routes>
       <Footer />
     </div>
-  )
+  );
 }
 
 export default App;

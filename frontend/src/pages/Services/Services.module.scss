@@ -1,7 +1,6 @@
 .container{
     height: 100%;
-    max-width: 1200px;
-    padding: 4em 0;
+    padding: 2.5em 0;
 
     & > ul {
         width: 100%;
@@ -11,15 +10,35 @@
         color: #fff;
         font-size: larger;
         display: flex;
-
-        h2{
+        letter-spacing: 1.2px;
+        font-weight: 600;
+        h2, a{
+            color: #fff;
             text-shadow: 2px 2px 2px black;
         }
 
-        & > h2{
+        & > h2, a{
             font-size: 1em;
         }
     }
+}
+
+.active{
+    border-bottom: 2px solid white;
+    transition: border ease;
+}
+
+.buttonCreateService{
+    background-color: #ffde51;    
+    color: #211154;
+    font-weight: bold;
+    padding: 1em;
+    display: block;
+    margin-block-end: 1em;
+    width: 25%;
+    margin-left: 3.7em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 // .serviceContainer{
 
