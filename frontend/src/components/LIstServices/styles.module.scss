@@ -41,6 +41,6 @@
 .grids{
   display: grid;
   grid-template-rows: repeat(auto-fit,minmax(230px,2fr));
-  text-align: center;
-
+  padding: 1em;
+  gap: 1em;
 }

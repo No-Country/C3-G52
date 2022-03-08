@@ -3,20 +3,30 @@ import style from "./cardServ.module.scss";
 import imgs from "../imgs/img";
 import { Link } from "react-router-dom";
 
-function CardServ({ name, img, description, price, key, id }) {
+const es = {
+  housing: "hospedaje",
+};
+
+function CardServ({ name, img, description, price, key, id, type, location }) {
   return (
     <div className={style.frameCard}>
       <img src={img} className={style.imgserv}></img>
-      <div>
-        <h2>{name}</h2>
-        <h6>categorías:</h6>
-        <h5>[actividades, hospedajes]</h5>
-        <p>{description}</p>
-        <h3>{price}</h3> ARS
-        <div className={style.here}>
-          <img src={imgs.here}></img> <h6>Fiambalá</h6>
+      <div className={style.frameCardInfo}>
+        <h2 className={style.frameCardtitle}>{name}</h2>
+        <div className={style.frameCardContainerType}>
+          <span>categorías:</span>
+          <p>[{es[type]}]</p>
+          <div className={style.frameCardLocation}>
+            <img src={imgs.here}></img> <h6>Fiambalá</h6>
+          </div>
         </div>
-        <Link to={`/detail/${id}`}>Mas Informacion</Link>
+        <p className={style.frameCardDescription}>{description}</p>
+        <div className={style.frameCardContainerPrice}>
+          <span>${price}</span> <span>ARS</span>{" "}
+          <Link className={style.frameCardButton} to={`/detail/${id}`}>
+            Reservar
+          </Link>
+        </div>
       </div>
     </div>
   );

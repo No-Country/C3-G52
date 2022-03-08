@@ -45,23 +45,24 @@ export default function Login() {
         let userData = {};
         let is = "";
         if (resUser.hasOwnProperty("company")) {
-          userData = resUser.company;
           is = "company";
         } else {
-          userData = resUser.client;
           is = "client";
         }
+        userData = resUser[is];
         localStorage.setItem(
           "userInfo",
           JSON.stringify({
             name: userData.name || "",
             email: userData.email,
             id: userData.id,
-            token: token,
+            token,
+            is,
           })
         );
 
         setUser({
+          id: userData.id,
           name: userData.name,
           email: userData.email,
           is,
