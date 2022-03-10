@@ -2,7 +2,7 @@ import CardService from "../card/cardServ";
 import SkeletonCardServices from "../SkeletonCardServices";
 import styles from "./styles.module.scss";
 
-export default function ListServices({ services = [] }) {
+export default function ListServices({ services = [], isByCompany = false }) {
   const listSkeleton = [1, 2, 3, 4, 5];
 
   return (
@@ -19,6 +19,7 @@ export default function ListServices({ services = [] }) {
                 price={service.price}
                 type={service.type}
                 location={service.location}
+                isByCompany={isByCompany}
               />
             ))
           : listSkeleton.map((el) => <SkeletonCardServices />)}

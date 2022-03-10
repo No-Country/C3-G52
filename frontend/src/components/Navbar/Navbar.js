@@ -8,27 +8,34 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 
 export default function Navbar() {
+  const { user, setUser } = useContext(userContext);
 
-  const {user, setUser} = useContext(userContext)
-  
   const handlerClickLogout = () => {
-    localStorage.removeItem("userInfo")
-    setUser(null)
-    console.log(user)
-  }
+    localStorage.removeItem("userInfo");
+    setUser(null);
+    console.log(user);
+  };
 
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   const handleMenuOpen = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav className={`${styles.navbar } ${styles.scroll}`}>
-      <ul className={menuOpen ? styles.menuList : `${styles.menuList } ${styles.menuListClose}`}>
+    <nav className={`${styles.navbar} ${styles.scroll}`}>
+      <ul
+        className={
+          menuOpen
+            ? styles.menuList
+            : `${styles.menuList} ${styles.menuListClose}`
+        }
+      >
         <li>
           <NavLink
             to="/"
             style={({ isActive }) => ({
-              borderBottom: isActive ? '3px solid rgba(255, 255, 255, 0.6)' : '',
+              borderBottom: isActive
+                ? "3px solid rgba(255, 255, 255, 0.6)"
+                : "",
             })}
           >
             Inicio
@@ -48,7 +55,9 @@ export default function Navbar() {
           <NavLink
             to="/products"
             style={({ isActive }) => ({
-              borderBottom: isActive ? '3px solid rgba(255, 255, 255, 0.6)' : '',
+              borderBottom: isActive
+                ? "3px solid rgba(255, 255, 255, 0.6)"
+                : "",
             })}
           >
             Productos
@@ -58,32 +67,47 @@ export default function Navbar() {
           <NavLink
             to="/services"
             style={({ isActive }) => ({
-              borderBottom: isActive ? '3px solid rgba(255, 255, 255, 0.6)' : '',
+              borderBottom: isActive
+                ? "3px solid rgba(255, 255, 255, 0.6)"
+                : "",
             })}
           >
             Servicios
           </NavLink>
         </li>
         <li>
-          {!user ? 
-            <NavLink 
+          {!user ? (
+            <NavLink
               to="/login"
-              className={styles.login}
+              // className={styles.login}
               style={({ isActive }) => ({
-                borderBottom: isActive ? '3px solid rgba(255, 255, 255, 0.6)' : '',
+                borderBottom: isActive
+                  ? "3px solid rgba(255, 255, 255, 0.6)"
+                  : "",
               })}
             >
               Iniciar
             </NavLink>
-            : 
-            <button onClick={handlerClickLogout}>
+          ) : (
+            <button
+              className={styles.buttonNavbar}
+              onClick={handlerClickLogout}
+            >
               Salir
-            </button>          
-          }
+            </button>
+          )}
         </li>
       </ul>
       <div className={styles.menuIcon} onClick={handleMenuOpen}>
-        { menuOpen ? <span className={styles.faClose}><AiOutlineCloseSquare /></span> : <span className={styles.faBars}><BiMenuAltRight /></span>}
+        {menuOpen ? (
+          <span className={styles.faClose}>
+            <AiOutlineCloseSquare />
+          </span>
+        ) : (
+          <span className={styles.faBars}>
+            <BiMenuAltRight />
+          </span>
+        )}
       </div>
     </nav>
   );

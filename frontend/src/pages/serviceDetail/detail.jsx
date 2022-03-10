@@ -11,7 +11,8 @@ const Detail = () => {
   const [service, setService] = useState(null);
 
   useEffect(() => {
-    fetch(`https://backend-c3.herokuapp.com/services/service/${id}`)
+    console.log(id);
+    fetch(`http://localhost:3002/services/service/${id}`)
       .then((res) => res.json())
       .then(setService);
   }, [id]);

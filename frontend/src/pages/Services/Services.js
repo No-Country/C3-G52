@@ -56,7 +56,10 @@ const Services = ({ type }) => {
           Añadir Un Nuevo Servicio
         </Link>
       )}
-      <ListServices services={services} />
+      <ListServices
+        services={services}
+        isByCompany={type === "servicesOfCompany" ? true : false}
+      />
     </div>
   );
 };

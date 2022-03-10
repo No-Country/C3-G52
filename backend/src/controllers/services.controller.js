@@ -141,7 +141,7 @@ const getAllServices = async (req, res, next) => {
 const getServiceForId = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const service = await Service.findOne({ id });
+    const service = await Service.findOne({ _id: id });
     res.status(200).json(service);
   } catch (error) {
     next(error);

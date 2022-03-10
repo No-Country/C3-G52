@@ -10,6 +10,16 @@ const indexRouter = require("./routes/index.routes");
 const routerCompany = require("./routes/company.routes");
 const reviewRouter = require("./routes/review.routes");
 const routerPayments = require("./routes/payments.routes");
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: "public/imgs/",
+  filename: (req, file, cb) => {
+    const filename = `${Date.now()}` + file.originalname;
+    req.filename = filename;
+    cb(null, filename);
+  },
+});
+const upload = multer({ storage: storage });
 
 app.use(
   cors({
@@ -24,6 +34,16 @@ app.use(
 );
 app.use(express.json());
 
+app.use(express.static("public"));
+app.post("/upload", upload.single("file"), async (req, res, next) => {
+  try {
+    const { filename } = req;
+    const path = `https://backend-c3.herokuapp.com/imgs/${filename}`;
+    res.status(201).json({ path });
+  } catch (error) {
+    next(error);
+  }
+});
 app.use("/", indexRouter);
 app.use("/services", routerServices);
 app.use("/", routerSign);

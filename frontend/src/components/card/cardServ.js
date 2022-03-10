@@ -7,7 +7,17 @@ const es = {
   housing: "hospedaje",
 };
 
-function CardServ({ name, img, description, price, key, id, type, location }) {
+function CardServ({
+  name,
+  img,
+  description,
+  price,
+  key,
+  id,
+  type,
+  location,
+  isByCompany = false,
+}) {
   return (
     <div className={style.frameCard}>
       <img src={img} className={style.imgserv}></img>
@@ -20,12 +30,20 @@ function CardServ({ name, img, description, price, key, id, type, location }) {
             <img src={imgs.here}></img> <h6>Fiambalá</h6>
           </div>
         </div>
-        <p className={style.frameCardDescription}>{description}</p>
+        <p className={style.frameCardDescription}>
+          {description.slice(0, 225)}
+          {description.length > 225 && "..."}
+        </p>
         <div className={style.frameCardContainerPrice}>
           <span>${price}</span> <span>ARS</span>{" "}
           <Link className={style.frameCardButton} to={`/detail/${id}`}>
             Reservar
           </Link>
+          {isByCompany && (
+            <Link className={style.frameCardButton} to={`/updateService/${id}`}>
+              Actualizar Informacion
+            </Link>
+          )}
         </div>
       </div>
     </div>
