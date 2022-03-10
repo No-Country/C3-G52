@@ -225,3 +225,59 @@
   color: red;
   border: 1px solid red;
 }
+
+
+@media (min-width: 320px) and (max-width:767px) {
+  .createServiceForm{
+      max-width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 200px; 
+      padding: 0 0;
+      
+      & label{
+        font-size: 14px;
+      }
+  }
+
+  .createServiceSection{
+    padding: 60px .2em;
+  }
+
+  .titleInfo{
+    font-size: 1.1em;
+  }
+
+  .containerLocations, .containerCompany, .containerDescription{
+    & > input{
+      max-width: 100px;
+      font-size: 14px;
+    }
+    // margin: .9em auto;
+    & > p{
+        color: rgb(100, 100, 100);
+        font-size: 14px;
+    } 
+  }
+  .containerLocations{
+    flex-wrap: wrap;
+  }
+
+  .containerDescription{
+    & > textarea{
+      // max-width: 200px;
+      font-size: 16px;
+    }
+  }
+
+  .containerPrePayment{
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2em 0;
+    // justify-content: flex-start;
+  }
+
+  .formSave{
+    // max-width: 200px;
+    justify-content: center;
+  }
+}

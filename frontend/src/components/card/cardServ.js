@@ -31,8 +31,8 @@ function CardServ({
           </div>
         </div>
         <p className={style.frameCardDescription}>
-          {description.slice(0, 225)}
-          {description.length > 225 && "..."}
+          {description.slice(0, 70)}
+          {description.length > 70 && "..."}
         </p>
         <div className={style.frameCardContainerPrice}>
           <span>${price}</span> <span>ARS</span>{" "}

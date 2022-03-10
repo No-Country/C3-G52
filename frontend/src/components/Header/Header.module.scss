@@ -12,9 +12,20 @@
     text-align: center;
     background-color: #00000006;
     
-    h1 {
+    h1{
       font-size: 7.5vw;
+      color: rgba(255, 255, 255, 0);
+      transition: color 1.5s ease-in;
+    }
+    .fade{
       color: #fff;
     }
+  }
+}
+
+
+@media (min-width:0px) and (max-width:768px) {
+  .image{
+    background-position: 60% 0px;
   }
 }
