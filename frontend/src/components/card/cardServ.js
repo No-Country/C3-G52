@@ -15,7 +15,8 @@ function CardServ({ name, img, description, price, key, id }) {
         <h3>{price}</h3> ARS
         <div className={style.here}>
           <img src={imgs.here}></img> <h6>Fiambalá</h6>
-        </div><Link to={`/detail/${id}`}>Mas Informacion</Link>
+          </div>
+        {/* </div><Link to={`/detail/${id}`}>Mas Informacion</Link> */}
         
       </div>
     </div>
