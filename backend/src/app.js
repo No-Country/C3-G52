@@ -29,6 +29,7 @@ app.use(
       "http://localhost",
       "http://localhost:3000",
       "192.168.2.206",
+      "https://ncturismo.vercel.app",
       "*",
     ],
   })
