@@ -76,6 +76,15 @@ export default function FormService() {
       });
   };
 
+  const handleClickDeletePrevImage = (e) => {
+    const imgPrev = e.target.nextElementSibling;
+    console.log(imgPrev.src);
+    const newFiles = pics.filter((pic) => pic !== imgPrev.src);
+    setPics((prevPics) => prevPics.filter((pic) => pic !== imgPrev.src));
+    localStorage.setItem("picsInEdit", JSON.stringify(newFiles));
+    return;
+  };
+
   const handleTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -125,7 +134,7 @@ export default function FormService() {
             {pics.length &&
               pics.map((pic) => (
                 <div className={style.prevImage}>
-                  <span>x</span>
+                  <span onClick={handleClickDeletePrevImage}>x</span>
                   <img src={pic} alt={pic} />
                 </div>
               ))}
@@ -154,11 +163,21 @@ export default function FormService() {
             <h4>OPINIONES:</h4>
             <p>5</p>
             <ul>
-              <li>star</li>
-              <li>star</li>
-              <li>star</li>
-              <li>star</li>
-              <li>star</li>
+              <li>
+                <i className="fa-solid fa-star"></i>
+              </li>
+              <li>
+                <i className="fa-solid fa-star"></i>
+              </li>
+              <li>
+                <i className="fa-solid fa-star"></i>
+              </li>
+              <li>
+                <i className="fa-solid fa-star"></i>
+              </li>
+              <li>
+                <i className="fa-solid fa-star"></i>
+              </li>
             </ul>
           </div>
 

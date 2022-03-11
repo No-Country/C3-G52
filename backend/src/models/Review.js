@@ -1,6 +1,8 @@
 const { Schema, model } = require("mongoose");
 
 const reviewSchema = new Schema({
+  avatar: String,
+  name: String,
   score: Number,
   content: String,
   active: Boolean,

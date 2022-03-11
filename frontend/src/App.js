@@ -29,10 +29,12 @@ function App() {
         <Route
           path="services/myServices"
           element={
-            user ? (
+            !user ? (
+              <Navigate to="/services" />
+            ) : user.is === "company" ? (
               <Services type="servicesOfCompany" />
             ) : (
-              <Navigate to="/services" />
+              <Services type="servicesOfClient" />
             )
           }
         />

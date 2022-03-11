@@ -17,11 +17,7 @@ const register = async (req, res, next) => {
 
     await company.save();
 
-    res.status(201).json({
-      name: company.name,
-      password,
-      email: company.email,
-    });
+    res.status(201).json(company);
   } catch (error) {
     next(error);
   }

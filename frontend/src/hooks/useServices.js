@@ -6,6 +6,8 @@ const urlServices = (type, id = "") => {
       return "https://backend-c3.herokuapp.com/services/all";
     case "servicesOfCompany":
       return `https://backend-c3.herokuapp.com/services/company/${id}`;
+    case "servicesOfClient":
+      return `https://backend-c3.herokuapp.com/clients/services-hired/${id}`;
     default:
       return "https://backend-c3.herokuapp.com/services/all";
   }
@@ -23,7 +25,7 @@ export default function useServices(typeFromProps, idFromProps = "") {
   }, [id, typeServices]);
 
   useEffect(() => {
-    console.log(url);
+    console.log("la url", url);
     fetch(url)
       .then((res) => res.json())
       .then((res) => {

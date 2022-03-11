@@ -1,7 +1,9 @@
-import React from "react";
+import { useEffect } from "react";
 import style from "./cardServ.module.scss";
 import imgs from "../imgs/img";
 import { Link } from "react-router-dom";
+import { convertNum } from "../../middlewares/convertNum";
+import { useLocation } from "react-router-dom";
 
 const es = {
   housing: "hospedaje",
@@ -18,6 +20,12 @@ function CardServ({
   location,
   isByCompany = false,
 }) {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    console.log(pathname);
+  });
+
   return (
     <div className={style.frameCard}>
       <img src={img} className={style.imgserv}></img>
@@ -35,13 +43,21 @@ function CardServ({
           {description.length > 70 && "..."}
         </p>
         <div className={style.frameCardContainerPrice}>
-          <span>${price}</span> <span>ARS</span>{" "}
-          <Link className={style.frameCardButton} to={`/detail/${id}`}>
-            Reservar
-          </Link>
-          {isByCompany && (
+          <span>${convertNum(price)}</span> <span>ARS</span>{" "}
+          {pathname !== "/services/myServices" && (
+            <Link className={style.frameCardButton} to={`/detail/${id}`}>
+              Reservar
+            </Link>
+          )}
+          {pathname !== "/services/myServices" ? (
+            ""
+          ) : isByCompany ? (
             <Link className={style.frameCardButton} to={`/updateService/${id}`}>
               Actualizar Informacion
+            </Link>
+          ) : (
+            <Link className={style.frameCardButton} to={`/updateService/${id}`}>
+              Cancelar Reserva
             </Link>
           )}
         </div>

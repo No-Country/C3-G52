@@ -43,11 +43,14 @@ const clientSchema = new Schema({
 
 // Esto quita de las respuestas al cliente la password y version
 // El_id es cambiado para que se muestre visualmente como uid
-clientSchema.methods.toJSON = function () {
-  const { __v, password, _id, ...user } = this.toObject();
-  user.id = _id;
-  return user;
-};
+clientSchema.set("toJSON", {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id;
+    delete returnedObject._id;
+    delete returnedObject.__v;
+    delete returnedObject.password;
+  },
+});
 
 const Client = model("Client", clientSchema);
 

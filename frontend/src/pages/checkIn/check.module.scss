@@ -3,21 +3,23 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
-
+	padding: 1em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
 	.title{
-		margin-bottom: 1rem;
+		margin-block-end: 1rem;
+		letter-spacing: 1px;
+		line-height: 130%;
 	}
 
 	.form{
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		width: 350px;
+		width: 300px;
 
 		& > *{
 			border: none;

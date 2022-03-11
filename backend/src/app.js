@@ -10,6 +10,7 @@ const indexRouter = require("./routes/index.routes");
 const routerCompany = require("./routes/company.routes");
 const reviewRouter = require("./routes/review.routes");
 const routerPayments = require("./routes/payments.routes");
+const routerClient = require("./routes/client.routes");
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: "public/imgs/",
@@ -47,6 +48,7 @@ app.post("/upload", upload.single("file"), async (req, res, next) => {
 app.use("/", indexRouter);
 app.use("/services", routerServices);
 app.use("/", routerSign);
+app.use("/clients/", routerClient);
 app.use("/companies/", routerCompany);
 app.use("/reviews", reviewRouter);
 app.use("/payments", routerPayments);

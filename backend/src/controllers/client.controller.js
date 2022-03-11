@@ -111,6 +111,21 @@ const loginClient = async (req, res, next) => {
   }
 };
 
+const getServicesHired = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const client = await Client.findById(id).populate("services_hired");
+
+    if (!client) throw { message: "Client not found", number: 404 };
+
+    res.status(200).json(client.services_hired);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const deleteServicesOfClient = async (req, res, next) => {};
+
 module.exports = {
   loginClient,
   getClientById,
@@ -118,4 +133,5 @@ module.exports = {
   updateClient,
   changePasswordClient,
   deleteClient,
+  getServicesHired,
 };
